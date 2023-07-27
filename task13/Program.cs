@@ -7,15 +7,18 @@ metka:
 Console.WriteLine("Введите целое число");
 int num = Convert.ToInt32(Console.ReadLine());
 int num1 = num;
-if (num < 0) num *= -1;
 
+if (num < 0) num *= -1;
 if (num < 100)
 {
     Console.WriteLine("У этого числа нет третьей цифры");
     goto metka;
 }
+ThirdDigit(num);
 
-
+void ThirdDigit(int number)
+{
 while (num >= 1000) num /= 10;
 int result = num % 10;
 Console.WriteLine($"Третья цифра числа {num1} -> {result}");
+}
